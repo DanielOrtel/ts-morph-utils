@@ -290,6 +290,10 @@ export function morphDeclarationToRaw<T = any, I extends Node = Node>(
     }
 
     if (typeof resolvedObject === 'string') {
+      if (propertyName) {
+        return `${resolvedObject}.${propertyName}`;
+      }
+
       return resolvedObject;
     }
 
